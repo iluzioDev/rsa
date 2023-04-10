@@ -12,6 +12,17 @@ import modules.functions as functions
 from modules.constants import *
 
 def encrypt(message, e, n):
+  """
+  Encrypts a message using RSA algorithm.
+
+  Args:
+      message (str): Message to encrypt.
+      e (int): Public exponent.
+      n (int): Public modulus.
+
+  Returns:
+      str: Encrypted message.
+  """
   message = message.upper().replace(" ", "").replace("Ñ", "N")
   block_size = math.floor(math.log(n, len(ALPHABET)))
   coded = []
